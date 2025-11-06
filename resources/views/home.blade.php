@@ -9,5 +9,7 @@
 </head>
 <body>
     <h1>Welcome to the Home Page</h1>
+    <a href="{{ url("/test") }}">Go to test page</a>
+    <a href="{{ route("testpage") }}">Go to test page</a>
 </body>
 </html>
