@@ -1,23 +1,50 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    @vite('resources/css/app.css')
-    @vite('resources/js/app.js')
-</head>
-<body>
-    <h1>Welcome to the Home Page</h1>
-    <a href="{{ url('/test') }}">Go to test page</a> <!-- Using url() helper -> use url -->
-    <a href="{{ route('testpage') }}">Go to test page</a> <!-- Using named route -> use name  -->
-    <form action="{{ route('form.submit') }}" method="POST">
+@extends('layouts.default')
+
+@section('title', 'Home Page')
+
+@section('header-title', 'Welcome to the Home Page')
+
+@section('header-nav')
+<nav>
+    <ul class="flex space-x-6">
+        <li>
+            <a href="{{ url('/test') }}" class="hover:text-indigo-200 transition">Go to Test Page</a>
+        </li>
+        <li>
+            <a href="{{ route('testpage') }}" class="hover:text-indigo-200 transition">Go to Test Page (Route)</a>
+        </li>
+    </ul>
+</nav>
+@endsection
+
+@section('main-content')
+<div class="max-w-lg mx-auto bg-white p-8 rounded-2xl shadow-lg">
+    <h2 class="text-xl font-semibold mb-6 text-center text-indigo-700">Submit Your Information</h2>
+
+    <form action="{{ route('form.submit') }}" method="POST" class="space-y-5">
         @csrf
-        <label for="fullname">Full Name:</label>
-        <input type="text" id="fullname" name="fullname" placeholder="Enter your full name" required><br>
-        <label for="email">Email:</label>
-        <input type="email" id="email" name="email" placeholder="Enter your email" required><br>
-        <button type="submit">Submit</button>
+        <div>
+            <label for="fullname" class="block text-sm font-medium text-gray-700 mb-1">Full Name</label>
+            <input type="text" id="fullname" name="fullname"
+                class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                placeholder="Enter your full name" required>
+        </div>
+
+        <div>
+            <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Email</label>
+            <input type="email" id="email" name="email"
+                class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                placeholder="Enter your email" required>
+        </div>
+
+        <button type="submit"
+            class="w-full bg-indigo-600 text-white font-semibold py-2 rounded-lg hover:bg-indigo-700 transition">
+            Submit
+        </button>
     </form>
-</body>
-</html>
+</div>
+@endsection
+
+@section('footer')
+<p>&copy; {{ date('Y') }} Your Company. All rights reserved.</p>
+@endsection
