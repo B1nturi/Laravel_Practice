@@ -3,21 +3,8 @@
 @section('title', 'Home Page')
 
 @section('header-title', 'Welcome to the Home Page')
-
-@section('header-nav')
-<nav>
-    <ul class="flex space-x-6">
-        <li>
-            <a href="{{ url('/test') }}" class="hover:text-indigo-200 transition">Go to Test Page</a>
-        </li>
-        <li>
-            <a href="{{ route('testpage') }}" class="hover:text-indigo-200 transition">Go to Test Page (Route)</a>
-        </li>
-    </ul>
-</nav>
-@endsection
-
 @section('main-content')
+@include('layouts.sidemenu')
 <div class="max-w-lg mx-auto bg-white p-8 rounded-2xl shadow-lg">
     <h2 class="text-xl font-semibold mb-6 text-center text-indigo-700">Submit Your Information</h2>
 

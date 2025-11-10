@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@yield('title', 'Ledgerly')</title>
+    <title>@yield('title', 'Laravel Practice')</title>
     @vite('resources/css/app.css')
     @vite('resources/js/app.js')
 </head>
@@ -15,7 +15,17 @@
     <header class="bg-indigo-600 text-white shadow-md">
         <div class="container mx-auto px-4 py-4 flex justify-between items-center">
             <h1 class="text-2xl font-semibold">@yield('header-title', 'Home')</h1>
-            @yield('header-nav')
+            <nav>
+                <ul class="flex space-x-6">
+                    <li>
+                        <a href="{{ url('/contact') }}" class="hover:text-indigo-200 transition">Contact</a>
+                    </li>
+                    <li>
+                        <a href="{{ route('testpage') }}" class="hover:text-indigo-200 transition">Go to Test Page
+                            (Route)</a>
+                    </li>
+                </ul>
+            </nav>
         </div>
     </header>
 
@@ -30,4 +40,5 @@
     </footer>
 
 </body>
+
 </html>
