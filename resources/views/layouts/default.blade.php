@@ -14,6 +14,7 @@
     <!-- Header -->
     <header class="bg-indigo-600 text-white shadow-md">
         <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <img width="30" height="30" src="{{ asset('images/search.png') }}" alt="Logo">
             <h1 class="text-2xl font-semibold">@yield('header-title', 'Home')</h1>
             <nav>
                 <ul class="flex space-x-6">
