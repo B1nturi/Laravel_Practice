@@ -2,16 +2,15 @@
 
 use Illuminate\Support\Facades\Route;
 use Illuminate\Http\Request;
+use App\Http\Controllers\PostController;
 
 // Get route example
 Route::get('/', function () {
     return view('home');
 });
 
-// Contact route example
-Route::get('/post', function () {
-    return view('post');
-});
+// Post route example
+Route::resource('post', PostController::class);
 
 // Name route example
 Route::get('/test', function () {
