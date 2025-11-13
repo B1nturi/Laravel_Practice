@@ -15,6 +15,17 @@
         </div>
     @endif
 
+    <!-- Trigger button -->
+    <div class="flex justify-end mb-6">
+        <button
+            id="openCreateModal"
+            type="button"
+            class="inline-flex items-center px-4 py-2 bg-indigo-600 hover:bg-indigo-700 text-white text-sm font-medium rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+        >
+            Create Post
+        </button>
+    </div>
+
     <form action="" method="POST" novalidate class="space-y-6">
         @csrf
 
