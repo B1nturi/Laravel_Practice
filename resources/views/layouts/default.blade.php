@@ -19,7 +19,7 @@
             <nav>
                 <ul class="flex space-x-6">
                     <li>
-                        <a href="{{ url('/contact') }}" class="hover:text-indigo-200 transition">Contact</a>
+                        <a href="{{ url('/post') }}" class="hover:text-indigo-200 transition">Post</a>
                     </li>
                     <li>
                         <a href="{{ route('testpage') }}" class="hover:text-indigo-200 transition">Go to Test Page

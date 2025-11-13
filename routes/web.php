@@ -9,8 +9,8 @@ Route::get('/', function () {
 });
 
 // Contact route example
-Route::get('/contact', function () {
-    return view('contact');
+Route::get('/post', function () {
+    return view('post');
 });
 
 // Name route example
