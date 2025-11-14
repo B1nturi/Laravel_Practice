@@ -32,8 +32,12 @@
                         class="text-indigo-600 hover:text-indigo-800 mt-2 inline-block">Read More</a>
                     <a href="{{ route('post.edit', $post->id) }}"
                         class="text-indigo-600 hover:text-indigo-800 mt-2 inline-block">Edit</a>
-                    <a href="{{ route('post.destroy', $post->id) }}"
-                        class="text-indigo-600 hover:text-indigo-800 mt-2 inline-block">Delete</a>
+                    <form action="{{ route('post.destroy', $post->id) }}" method="POST"
+                        class="text-indigo-600 hover:text-indigo-800 mt-2 inline-block"
+                        onclick="return confirm('Are you sure?')">@csrf
+                        @method('DELETE')
+                        <button type="submit">Delete</button>
+                    </form>
                 </div>
             @endforeach
             @if ($posts->isEmpty())

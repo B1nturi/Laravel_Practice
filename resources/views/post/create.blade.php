@@ -1,8 +1,8 @@
 @extends('layouts.default')
 
-@section('title', 'Post Page')
+@section('title', 'Post Create Page')
 
-@section('header-title', 'Welcome to the Post Page')
+@section('header-title', 'Welcome to the Post Create Page')
 @section('main-content')
     <div class="max-w-3xl mx-auto py-8 px-4">
 

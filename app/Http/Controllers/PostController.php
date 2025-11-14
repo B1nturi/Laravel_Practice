@@ -75,7 +75,7 @@ class PostController extends Controller
             'content' => $request->input('content'),
         ]);
 
-        return redirect()->route('post.index')->with('success', 'Post created successfully.');
+        return redirect()->route('post.index')->with('success', 'Post updated successfully.');
     }
 
     /**
